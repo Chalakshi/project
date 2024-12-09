@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="69b1fdd3-d571-40f6-af0d-303203b5ede2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+    customers.customer_name,
+    customers.address,
+    orders.order_id,
+    orders.product_id,
+    orders.payment_method
+FROM 
+    customers
+INNER JOIN 
+    orders 
+ON 
+    customers.customer_id = orders.customer_id;]]>
+	</queryString>
+	<field name="order_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="product_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payment_method" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="155" y="17" width="329" height="41" forecolor="#009999" uuid="8acae30e-9bc0-4c80-9365-af471ee33691"/>
+				<textElement>
+					<font size="24" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[FLORA EXPRESS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="195" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="14" width="100" height="20" uuid="73dc9c0f-2b0f-4475-a117-dec33da169d3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Flora Express]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="49" width="106" height="20" uuid="abd698c3-94dc-49ed-9ddc-aa0bfe06d8f0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[No.630,Yakwila,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="82" width="100" height="20" uuid="7e0aa883-3104-46bd-ba20-f4a2aa01160f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Kuliyapitiya,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="113" width="100" height="20" uuid="e6ce40f8-9152-4ef5-b8ba-fc23bb8bbde3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[037 22 66 237]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="137" width="100" height="20" uuid="3361719d-059a-4b6c-94ba-06b7bd7ee2a3"/>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Order Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="18" width="88" height="20" uuid="ad6a50ce-016a-42f4-8fc2-97defda7cfa8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="107" y="19" width="121" height="20" uuid="323c6330-f28a-4653-b74e-c0f3b365232c"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="19" width="82" height="20" uuid="1d95d533-a9eb-4fd0-9b0c-5e5c173a2065"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="18" width="87" height="20" uuid="8e142615-801c-4331-995f-839c32b27ad1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="19" width="119" height="20" uuid="8f068350-965b-44ec-8856-8457da5d0325"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Method]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="119" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="39" width="73" height="20" uuid="090714ad-dbcf-4674-b0c8-b5c2e4cacc89"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="39" width="121" height="20" uuid="6896a52d-29cc-44cf-8bff-f366098d58c6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="39" width="82" height="20" uuid="ede6ef4b-6f39-4f7e-a776-9a157e5ca68e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="39" width="96" height="20" uuid="02b025a9-d525-4fc0-824b-db75825c6923"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="39" width="119" height="20" uuid="100cb699-395e-4bc0-96f3-d969f9f0897e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payment_method}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="340" y="10" width="199" height="20" uuid="36c75752-6cd8-4136-8bb1-c3813a60ac11"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Prepared By: Mr.S.W.Perera]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="40" width="184" height="20" uuid="b591f30c-d130-49c8-bc7e-8341b82f09af"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Designation:Order Manager]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="72" width="142" height="20" uuid="a84cb655-71b6-447a-88e1-335821ee1814"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Date: 2024.12.05]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
